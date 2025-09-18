@@ -1,0 +1,7 @@
+enabled: true
+languages:
+  - code: en
+    content: |
+      MY_PLUGIN:
+        GREETING: "Hello"
+        CTA: "Read More"

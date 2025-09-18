@@ -1,0 +1,58 @@
+name: Translation Strings
+slug: translation-strings
+type: plugin
+version: 0.1.0
+description: Manage custom translation snippets stored under user/data/translation-strings.
+icon: language
+author:
+  name: Trilby Media
+  email: hello@trilby.media
+homepage: https://github.com/trilbymedia
+keywords: grav, plugin, translations
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.7.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    languages:
+      type: list
+      label: PLUGIN_TRANSLATION_STRINGS.LANGUAGES_LABEL
+      help: PLUGIN_TRANSLATION_STRINGS.LANGUAGES_HELP
+      style: vertical
+      btn_label: PLUGIN_TRANSLATION_STRINGS.ADD_LANGUAGE
+      collapsed: false
+      fields:
+        .code:
+          type: select
+          size: small
+          style: vertical
+          label: PLUGIN_TRANSLATION_STRINGS.LANGUAGE_CODE
+          data-options@: '\Grav\Plugin\TranslationStringsPlugin::languageOptions'
+          placeholder: en
+          validate:
+            required: true
+        .content:
+          type: codemirror
+          label: PLUGIN_TRANSLATION_STRINGS.LANGUAGE_CONTENT
+          codemirror:
+            mode: yaml
+            theme: paper
+            indentUnit: 2
+            lineNumbers: true
+          validate:
+            type: yaml
+          help: PLUGIN_TRANSLATION_STRINGS.LANGUAGE_CONTENT_HELP

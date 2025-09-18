@@ -1,0 +1,9 @@
+PLUGIN_TRANSLATION_STRINGS:
+  PLUGIN_NAME: "Translation Strings"
+  PLUGIN_DESCRIPTION: "Manage custom translation snippets stored in user/data/translation-strings."
+  LANGUAGES_LABEL: "Custom Languages"
+  LANGUAGES_HELP: "Add one entry per language code. Each entry accepts YAML that follows Grav's translation structure."
+  ADD_LANGUAGE: "Add Language"
+  LANGUAGE_CODE: "Language Code"
+  LANGUAGE_CONTENT: "Translation YAML"
+  LANGUAGE_CONTENT_HELP: "Example: MY_PLUGIN.GREETING: 'Hello there'"
