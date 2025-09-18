@@ -1,13 +1,13 @@
 name: Translation Strings
 slug: translation-strings
 type: plugin
-version: 1.0.0
+version: 1.0.1
 description: Manage custom translation snippets stored under user/data/translation-strings.
 icon: language
 author:
   name: Trilby Media
   email: hello@trilby.media
-homepage: https://github.com/trilbymedia
+homepage: https://github.com/trilbymedia/grav-plugin-translation-strings
 keywords: grav, plugin, translations
 license: MIT
 
