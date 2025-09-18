@@ -1,7 +1,7 @@
 name: Translation Strings
 slug: translation-strings
 type: plugin
-version: 0.1.0
+version: 1.0.0
 description: Manage custom translation snippets stored under user/data/translation-strings.
 icon: language
 author:
