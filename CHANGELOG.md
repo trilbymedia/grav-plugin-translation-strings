@@ -1,3 +1,9 @@
+# v1.0.2
+## 09/17/2025
+
+1. [](#improved)
+    * Change events to ensure you can override theme lang strings
+
 # v1.0.1
 ## 09/17/2025
 
