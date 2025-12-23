@@ -31,7 +31,18 @@ class TranslationStringsPlugin extends Plugin
     {
         return [
             'onPluginsInitialized' => ['onPluginsInitialized', 0],
+            // Load custom translations after theme languages are loaded
+            'onThemeInitialized' => ['onThemeInitialized', -1000],
         ];
+    }
+
+    public function onPluginsInitialized(): void
+    {
+        if ($this->isAdmin()) {
+            $this->enable([
+                'onAdminSave' => ['onAdminSave', 0],
+            ]);
+        }
     }
 
     public static function languageOptions(): array
@@ -98,15 +109,13 @@ class TranslationStringsPlugin extends Plugin
         return $codes;
     }
 
-    public function onPluginsInitialized(): void
+    /**
+     * Load custom translations after theme languages are loaded
+     * This ensures user translations override theme defaults
+     */
+    public function onThemeInitialized(): void
     {
         $this->loadCustomTranslations();
-
-        if ($this->isAdmin()) {
-            $this->enable([
-                'onAdminSave' => ['onAdminSave', 0],
-            ]);
-        }
     }
 
     private function loadCustomTranslations(): void
