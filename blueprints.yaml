@@ -1,7 +1,7 @@
 name: Translation Strings
 slug: translation-strings
 type: plugin
-version: 1.0.2
+version: 1.0.3
 description: Manage custom translation snippets stored under user/data/translation-strings.
 icon: language
 author:
@@ -46,13 +46,14 @@ form:
           validate:
             required: true
         .content:
-          type: codemirror
+          type: editor
           label: PLUGIN_TRANSLATION_STRINGS.LANGUAGE_CONTENT
           codemirror:
             mode: yaml
-            theme: paper
             indentUnit: 2
             lineNumbers: true
+            indentWithTabs: false
+            styleActiveLine: true
           validate:
             type: yaml
           help: PLUGIN_TRANSLATION_STRINGS.LANGUAGE_CONTENT_HELP
