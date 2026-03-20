@@ -1,3 +1,10 @@
+# v1.0.3
+## 03/19/2026
+
+1. [](#improved)
+    * Monospace editor for easier YAML editing
+    * Various minor improvements
+
 # v1.0.2
 ## 09/17/2025
 
