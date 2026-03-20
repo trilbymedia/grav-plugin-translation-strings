@@ -3,7 +3,7 @@
 
 1. [](#improved)
     * Monospace editor for easier YAML editing
-    * Various minor improvements
+    * Save in fully expanded YAML format
 
 # v1.0.2
 ## 09/17/2025
