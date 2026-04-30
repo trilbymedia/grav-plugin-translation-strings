@@ -62,7 +62,7 @@ class TranslationStringsPlugin extends Plugin
         $path = $uri->path();
 
         // Only load on this plugin's config page
-        if (!$path || strpos($path, '/admin/plugins/translation-strings') === false) {
+        if (!$path || strpos((string) $path, '/admin/plugins/translation-strings') === false) {
             return;
         }
 
@@ -279,7 +279,7 @@ class TranslationStringsPlugin extends Plugin
 
         $blueprints = $object->blueprints();
         $bpFile = $blueprints ? $blueprints->getFilename() : '';
-        if (!$blueprints || strpos($bpFile, 'translation-strings') === false) {
+        if (!$blueprints || strpos((string) $bpFile, 'translation-strings') === false) {
             return;
         }
 

@@ -1,7 +1,7 @@
 name: Translation Strings
 slug: translation-strings
 type: plugin
-version: 1.0.3
+version: 1.0.4
 description: Manage custom translation snippets stored under user/data/translation-strings.
 icon: language
 author:
@@ -10,6 +10,9 @@ author:
 homepage: https://github.com/trilbymedia/grav-plugin-translation-strings
 keywords: grav, plugin, translations
 license: MIT
+
+compatibility:
+  grav: ['1.7', '2.0']
 
 dependencies:
   - { name: grav, version: '>=1.7.0' }
