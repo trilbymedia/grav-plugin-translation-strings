@@ -42,10 +42,24 @@ class TranslationStringsPlugin extends Plugin
 
     public function onPluginsInitialized(): void
     {
+        // Subscribe the save hooks unconditionally. In Grav 2.0 admin-next saves
+        // go through the API plugin, which only registers $grav['admin'] later
+        // during request dispatch -- so isAdmin() is still false here at
+        // onPluginsInitialized time. Gating these on isAdmin() meant they were
+        // never subscribed for admin-next/API config saves, so the YAML cleanup
+        // and expansion never ran. Both handlers self-guard (they only act on
+        // this plugin's own config save), so subscribing on the frontend too is
+        // harmless -- the events only fire during admin/API write operations.
+        $this->enable([
+            'onAdminSave' => ['onAdminSave', 0],
+            'onAdminAfterSave' => ['onAdminAfterSave', 0],
+        ]);
+
+        // Admin-classic-only UI: injects JS on the classic admin config page.
+        // This genuinely only applies to admin-classic, so isAdmin() gating is
+        // correct here.
         if ($this->isAdmin()) {
             $this->enable([
-                'onAdminSave' => ['onAdminSave', 0],
-                'onAdminAfterSave' => ['onAdminAfterSave', 0],
                 'onAssetsInitialized' => ['onAssetsInitialized', 0],
             ]);
         }

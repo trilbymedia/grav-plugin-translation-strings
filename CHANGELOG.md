@@ -1,3 +1,9 @@
+# v1.0.5
+## 06/06/2026
+
+1. [](#bugfix)
+    * Custom translations now save correctly when edited through the new admin.
+
 # v1.0.4
 ## 04/30/2026
 
