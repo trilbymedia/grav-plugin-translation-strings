@@ -1,8 +1,8 @@
 name: Translation Strings
 slug: translation-strings
 type: plugin
-version: 1.0.5
-description: Manage custom translation snippets stored under user/data/translation-strings.
+version: 1.0.6
+description: Manage custom translation snippets for Grav 1.7. On Grav 2.0 use the built-in Translations section in Admin 2.1 instead.
 icon: language
 author:
   name: Trilby Media
@@ -11,11 +11,16 @@ homepage: https://github.com/trilbymedia/grav-plugin-translation-strings
 keywords: grav, plugin, translations
 license: MIT
 
+# Grav 2.0 has this built in — Admin 2.1 ships a Translations section that
+# stores the same overrides as real language files under user/languages, so a
+# second merge layer on 2.0 only creates a conflict this plugin would win.
+# Existing 2.0 installs are unaffected until they update; the built-in editor
+# offers to import from here and then disable this plugin.
 compatibility:
-  grav: ['1.7', '2.0']
+  grav: ['1.7']
 
 dependencies:
-  - { name: grav, version: '>=1.7.0' }
+  - { name: grav, version: '>=1.7.0 <2.0.0' }
 
 form:
   validation: loose

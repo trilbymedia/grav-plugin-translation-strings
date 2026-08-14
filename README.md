@@ -1,5 +1,11 @@
 # Translation Strings Plugin
 
+> **Grav 2.0 has this built in.** Admin 2.1 ships a **Translations** section that does everything this plugin does and adds search across every string on the site, per-language coverage, machine translation, and a report of keys nothing provides any more. It stores overrides as ordinary language files under `user/languages/`, which Grav reads natively.
+>
+> This plugin remains supported on **Grav 1.7**. If you are on 2.0, open **Translations** in the admin: it detects the snippets stored here, offers to import them, and then offers to disable this plugin. Nothing is deleted, so the move is reversible. There is also a CLI equivalent: `bin/plugin api i18n:migrate --dry-run`.
+>
+> Keeping both active on 2.0 is not recommended. This plugin merges its strings *after* the built-in editor does, so it silently wins any key set in both places.
+
 The **Translation Strings** plugin lets you manage per-language YAML snippets inside Grav Admin. Each snippet is saved to `user/config/plugins/translation-strings.yaml` and merged into Grav’s translation service on save, so Twig’s `|t` filter and `$language->translate()` can use the keys immediately.
 
 ## Installation
