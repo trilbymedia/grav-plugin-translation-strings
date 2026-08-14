@@ -1,3 +1,10 @@
+# v1.0.6
+## 08/14/2026
+
+1. [](#improved)
+    * Marked as a Grav 1.7 plugin. Grav 2.0 has this built in: Admin 2.1 has a Translations section that does the same job, and offers to import your existing snippets from here.
+    * Corrected the plugin description, which named the wrong storage location.
+
 # v1.0.5
 ## 06/06/2026
 
